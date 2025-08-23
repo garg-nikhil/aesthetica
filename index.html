@@ -39,6 +39,8 @@
       --border:#e6e6e6;
       --blue:#0b5cab;
       --green:#0a7d2f;
+      --wa:#25D366;      /* WhatsApp green */
+      --call:#128C7E;    /* Phone button green */
       --bg:#fff;
     }
     * { box-sizing: border-box; }
@@ -139,9 +141,25 @@
       text-decoration: none;
       font-weight: 600;
     }
-    .cta.secondary {
-      background: var(--green);
+    .cta.secondary { background: var(--green); }
+
+    /* Icon-only CTA variant */
+    .cta.cta-icon {
+      padding: 10px 12px;
+      border-radius: 10px;
+      line-height: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.04);
     }
+    .cta.cta-icon svg { display: block; color: #fff; }
+    .cta.cta-icon.wa { background: var(--wa); }
+    .cta.cta-icon.call { background: var(--call); }
+    #booking .cta.cta-icon + .cta.cta-icon { margin-left: 10px; }
+
     address {
       font-style: normal;
       white-space: pre-line;
@@ -164,6 +182,7 @@
       position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
       overflow: hidden; clip: rect(0,0,1px,1px); white-space: nowrap; border: 0;
     }
+    .cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
   </style>
 
   <!-- Structured Data (JSON-LD) -->
@@ -307,10 +326,23 @@
         <h2 id="booking-heading">Book an Appointment</h2>
         <p>Choose WhatsApp for instant chat. Tip: Add preferred date/time and service in the message for faster confirmation. Online booking is free. You’ll receive confirmation by WhatsApp/SMS.</p>
 
-        <a class="cta" href="https://wa.me/919226680164?text=Hello%20Aesthetica%2C%20I%27d%20like%20to%20book%20an%20appointment%20for%20%5Bservice%5D%20on%20%5Bdate%5D%20at%20%5Btime%5D." aria-label="WhatsApp booking for Aesthetica">
-          Book on WhatsApp
-        </a>
-        <a class="cta secondary" href="tel:+919226680164" aria-label="Call Aesthetica primary number">Call: 09226680164</a>
+        <div class="cta-row">
+          <a class="cta cta-icon wa" href="https://wa.me/919226680164?text=Hello%20Aesthetica%2C%20I%27d%20like%20to%20book%20an%20appointment%20for%20%5Bservice%5D%20on%20%5Bdate%5D%20at%20%5Btime%5D." aria-label="Book on WhatsApp">
+            <!-- WhatsApp SVG -->
+            <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M19.11 17.3c-.29-.14-1.7-.84-1.96-.94-.26-.1-.45-.14-.64.14-.19.29-.74.94-.91 1.14-.17.19-.34.22-.63.08-.29-.14-1.21-.44-2.3-1.41-.85-.76-1.42-1.7-1.59-1.99-.17-.29-.02-.45.12-.6.12-.12.29-.31.43-.46.14-.15.19-.26.29-.43.1-.19.05-.35-.02-.49-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.47-.64-.47-.17 0-.35-.02-.53-.02s-.49.07-.75.35c-.26.29-1 1-1 2.43 0 1.43 1.03 2.81 1.18 3 .15.19 2.03 3.1 4.93 4.34.69.3 1.22.48 1.64.62.69.22 1.32.19 1.82.12.55-.08 1.7-.7 1.94-1.38.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33zM16.06 28c-2.07 0-4.09-.56-5.86-1.63l-4.07 1.06 1.09-3.97C5.05 21.63 4.5 19.6 4.5 17.53 4.5 10.99 9.99 5.5 16.53 5.5c3.19 0 6.19 1.24 8.45 3.5s3.5 5.26 3.5 8.45c0 6.54-5.49 12.05-11.93 12.05h-.49zM7.91 23.77l.25.15C10.02 25.2 12.01 25.8 14 25.8h.56c5.22 0 9.74-4.52 9.74-9.74S19.78 6.31 14.56 6.31c-5.22 0-9.74 4.52-9.74 9.74 0 1.99.6 3.98 1.89 5.84l.2.28-.73 2.66 2.73-.7z"/>
+            </svg>
+            <span class="sr-only">Book on WhatsApp</span>
+          </a>
+
+          <a class="cta cta-icon call" href="tel:+919226680164" aria-label="Call Aesthetica">
+            <!-- Phone SVG -->
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M6.62 10.79a15.46 15.46 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.11.37 2.3.57 3.58.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.85 22.02 2 13.17 2 2.99a1 1 0 011-1H6.5a1 1 0 011 1c0 1.28.2 2.47.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/>
+            </svg>
+            <span class="sr-only">Call: 09226680164</span>
+          </a>
+        </div>
       </section>
 
       <section id="contact" aria-labelledby="contact-heading">
@@ -333,7 +365,6 @@
       <section id="location" aria-labelledby="location-heading">
         <h2 id="location-heading">Location</h2>
         <p>Find Aesthetica at Shop No. 103, Swaraaj Heights, Kate Wasti Road, Punawale, Pune 411033.</p>
-        <!-- Google Maps Embed: replace the src with your exact Place embed if you have the Google Maps share link -->
         <iframe
           class="map"
           loading="lazy"
