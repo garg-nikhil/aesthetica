@@ -1,256 +1,282 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aesthetica</title>
-  <meta name="description" content="Aesthetica offers comprehensive dental and skin care services in Punawale. Book appointments for dental checkups, root canals, braces/aligners, teeth whitening, acne treatment, chemical peels, microneedling/PRP, and more." />
-  <meta name="theme-color" content="#0a6cff" />
-  <meta property="og:title" content="Aesthetica" />
-  <meta property="og:description" content="Comprehensive dental and skin care. Book an appointment via WhatsApp or form." />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Aesthetica Clinic" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/garg-nikhil/aesthetica/main/logo.png" />
-  <link rel="icon" href="favicon.ico" />
 
+  <title>Aesthetica — Dental & Skin Care Clinic in Punawale, Pune</title>
+  <meta name="description" content="Aesthetica offers comprehensive dental and skin care in Punawale, Pune. Led by Dr. Prachi Gupta (BDS, Certified Cosmetologist). Routine checkups, root canals, implants, braces, whitening, pediatric dentistry, scaling & polishing, fillings, crowns & bridges, extractions, and cosmetic skin treatments." />
+
+  <link rel="canonical" href="https://www.example.com/" />
+
+  <meta name="robots" content="index,follow" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Aesthetica — Dental & Skin Care Clinic in Punawale, Pune" />
+  <meta property="og:description" content="Integrated dental and skin care. Patient-first, hygiene-focused, modern equipment. Mon–Sat 10 AM–8 PM, Sun by appointment." />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Basic, lightweight CSS for clean layout -->
   <style>
-    :root{
-      --brand:#0a6cff;
-      --brand-dark:#074db3;
-      --bg:#ffffff;
-      --text:#1f2937;
-      --muted:#6b7280;
-      --card:#f8fafc;
-      --border:#e5e7eb;
-      --success:#0a7d33;
+    :root {
+      --text:#1a1a1a;
+      --muted:#555;
+      --subtle:#777;
+      --border:#e6e6e6;
+      --brand:#0f6;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1100px;margin:0 auto;padding:0 16px}
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
-    .logo-badge{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--brand),#42a5ff);color:#fff;display:grid;place-items:center;font-weight:800}
-    .nav a.btn{margin-left:10px}
-    .hero{padding:52px 0 28px}
-    .hero h1{font-size:36px;line-height:1.2;margin:6px 0 12px}
-    .hero p{color:var(--muted);max-width:720px;margin:0}
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
-    .badge{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:14px;color:#374151}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;border:0;border-radius:10px;padding:12px 16px;font-weight:600}
-    .btn.secondary{background:#111827}
-    .btn.ghost{background:#fff;color:var(--text);border:1px solid var(--border)}
-    .btn:hover{background:var(--brand-dark);text-decoration:none}
-    .btn.ghost:hover{background:#f3f4f6}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    section{padding:26px 0}
-    h2{font-size:24px;margin:0 0 8px}
-    .sub{color:var(--muted);margin:0 0 14px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
-    .services{grid-column:span 8}
-    .sidebar{grid-column:span 4}
-    @media(max-width:900px){
-      .services,.sidebar{grid-column:1/-1}
-      .hero h1{font-size:28px}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: #fff;
     }
-    ul.clean{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-    li.service{background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px}
-    .service b{display:block;margin-bottom:4px}
-    .note{font-size:14px;color:var(--muted)}
-    .info-row{display:flex;align-items:center;gap:10px;margin:6px 0;color:#374151}
-    .divider{height:1px;background:var(--border);margin:16px 0}
-    .kicker{font-size:14px;color:var(--brand);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
-    .footer{border-top:1px solid var(--border);padding:18px 0;color:#6b7280;font-size:14px}
-    .map-wrap{overflow:hidden;border-radius:14px;border:1px solid var(--border)}
-    .pill{display:inline-block;background:#e8f1ff;color:#0b4aa5;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600}
-    .success{color:var(--success);font-weight:600}
-    /* simple accessibility focus */
-    :focus-visible{outline:3px solid #93c5fd;outline-offset:2px;border-radius:6px}
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header.site-header {
+      text-align: center;
+      padding: 28px 12px 12px;
+    }
+    .brand {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .tagline {
+      margin: 6px 0 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .subline {
+      margin: 8px 0 0;
+      font-size: 0.95rem;
+      color: var(--subtle);
+    }
+    nav[aria-label="Primary"] {
+      margin: 18px auto 8px;
+      text-align: center;
+    }
+    nav a {
+      display: inline-block;
+      padding: 6px 10px;
+      color: #0b5cab;
+      text-decoration: none;
+    }
+    nav a:hover { text-decoration: underline; }
+    main { padding-top: 8px; }
+    section { padding: 16px 0; border-top: 1px solid var(--border); }
+    section:first-of-type { border-top: 0; }
+    h2 {
+      font-size: 1.35rem;
+      margin: 0 0 8px;
+    }
+    h3 {
+      font-size: 1.15rem;
+      margin: 16px 0 8px;
+    }
+    p { margin: 8px 0; }
+    .badges {
+      margin: 8px 0 0;
+      color: var(--subtle);
+      font-size: 0.95rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fff;
+    }
+    .cta {
+      background: #0b5cab;
+      color: #fff !important;
+      border-radius: 8px;
+      display: inline-block;
+      padding: 12px 16px;
+      margin-top: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .cta.secondary {
+      background: #0a7d2f;
+    }
+    .list-compact {
+      margin: 6px 0 0;
+      padding-left: 18px;
+    }
+    .list-compact li { margin: 4px 0; }
+    address {
+      font-style: normal;
+      white-space: pre-line;
+    }
+    footer {
+      padding: 20px 0 40px;
+      border-top: 1px solid var(--border);
+      color: var(--subtle);
+      font-size: 0.95rem;
+    }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,1px,1px); white-space: nowrap; border: 0;
+    }
   </style>
+
+  <!-- LocalBusiness + MedicalBusiness structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Aesthetica",
+    "alternateName": "Aesthetica Dental & Skin Care Clinic",
+    "description": "Integrated dental and skin care clinic offering routine checkups, root canals, implants, braces, whitening, pediatric dentistry, scaling and polishing, fillings, crowns and bridges, extractions, and cosmetic skin treatments.",
+    "url": "https://www.example.com/",
+    "logo": "https://www.example.com/logo.png",
+    "image": "https://www.example.com/cover.jpg",
+    "telephone": ["+919226680164", "+917709736251"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Shop No. 103, Swaraaj Heights, Kate Wasti Road, Punawale",
+      "addressLocality": "Pune",
+      "postalCode": "411033",
+      "addressCountry": "IN",
+      "addressRegion": "Maharashtra"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "20:00" }
+    ],
+    "areaServed": "Punawale, Pune",
+    "priceRange": "₹₹",
+    "founder": {
+      "@type": "Person",
+      "name": "Dr. Prachi Gupta",
+      "honorificSuffix": "BDS",
+      "jobTitle": "Certified Cosmetologist"
+    },
+    "medicalSpecialty": ["Dentistry","CosmeticSurgery","Dermatology"],
+    "sameAs": []
+  }
+  </script>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="logo">
-        <img src="logo.png" alt="Aesthetica Clinic logo" style="height:60px;width:auto;border-radius:8px" />
-        <span>Aesthetica Clinic</span>
-      </div>
-      <nav>
-        <a href="#services" class="btn ghost">Services</a>
-        <a href="#book" class="btn">Book Appointment</a>
-        <!-- <a href="#contact" class="btn secondary">Call</a> -->
+  <div class="container">
+    <header class="site-header" role="banner">
+      <h1 class="brand">Aesthetica</h1>
+      <h2 class="tagline">Dental &amp; Skin Care Clinic</h2>
+      <p class="subline">Punawale, Pune • Mon–Sat 10:00 AM – 8:00 PM • Sun by appointment</p>
+
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Book</a>
+        <a href="#contact">Contact</a>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <span class="kicker">Dental & Skin Care</span>
-        <h1>Aesthetica — Comprehensive dental and skin treatments in Punawale</h1>
-        <p>Personalized, high-quality care for teeth and skin—routine checkups to advanced cosmetic procedures. Transparent communication, modern equipment, and a patient-first approach.</p>
-        <div class="badges">
-          <span class="badge">BDS • Certified Cosmetologist</span>
-          <span class="badge">Hygiene-first protocols</span>
-          <span class="badge">Patient-centric care</span>
+    <main id="content">
+      <section id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Aesthetica</h2>
+        <p>Aesthetica provides integrated dental and skin care under one roof. Led by <strong>Dr. Prachi Gupta (BDS, Certified Cosmetologist)</strong>, we combine clinical expertise with modern techniques to deliver safe, effective treatments tailored to each patient.</p>
+        <p class="badges">BDS • Certified Cosmetologist • Hygiene-first protocols • Patient-centric care</p>
+      </section>
+
+      <section id="services" aria-labelledby="services-heading">
+        <h2 id="services-heading">Services</h2>
+        <p>Explore our Dental and Skin Care offerings.</p>
+
+        <h3>Dental Care</h3>
+        <div class="services-grid">
+          <article class="card" itemscope itemtype="https://schema.org/MedicalProcedure">
+            <h4 itemprop="name">Routine Checkup</h4>
+            <p itemprop="howPerformed">Comprehensive oral examination and treatment plan.</p>
+          </article>
+          <article class="card">
+            <h4>Scaling &amp; Polishing</h4>
+            <p>Professional cleaning for gum health and stain removal.</p>
+          </article>
+          <article class="card">
+            <h4>Fillings</h4>
+            <p>Tooth-colored restorations for cavities and minor fractures.</p>
+          </article>
+          <article class="card">
+            <h4>Root Canal Treatment</h4>
+            <p>Pain-relieving endodontic therapy to save natural teeth.</p>
+          </article>
+          <article class="card">
+            <h4>Crowns &amp; Bridges</h4>
+            <p>Strong, aesthetic restorations for damaged or missing teeth.</p>
+          </article>
+          <article class="card">
+            <h4>Extractions</h4>
+            <p>Safe removal with minimal discomfort, including wisdom teeth.</p>
+          </article>
+          <article class="card">
+            <h4>Dental Implants</h4>
+            <p>Permanent replacement for missing teeth.</p>
+          </article>
+          <article class="card">
+            <h4>Orthodontics</h4>
+            <p>Metal/ceramic braces and clear aligners for alignment.</p>
+          </article>
+          <article class="card">
+            <h4>Teeth Whitening</h4>
+            <p>In-clinic and at-home whitening options.</p>
+          </article>
+          <article class="card">
+            <h4>Pediatric Dentistry</h4>
+            <p>Gentle care tailored for children.</p>
+          </article>
         </div>
-        <div class="cta">
-          <!-- Update phone numbers -->
-          <a class="btn" href="https://wa.me/919226680164?text=Hi%20Aesthetica%2C%20I%27d%20like%20to%20book%20an%20appointment%20for%20%7Bservice%7D%20on%20%7Bdate%2Ftime%7D." target="_blank" rel="noopener">Chat on WhatsApp</a>
-          <!-- Optional: replace with your Google Form link -->
-          <a class="btn ghost" href="#book">Appointment Form</a>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="about">
-      <div class="container grid">
-        <div class="services card" style="grid-column:span 8">
-          <h2>About Aesthetica</h2>
-          <p>Aesthetica provides integrated dental and skin care under one roof. Led by <b>Dr. Prachi Gupta (BDS, Certified Cosmetologist)</b>, we combine clinical expertise with modern techniques to deliver safe, effective treatments tailored to each patient.</p>
-          <div class="divider"></div>
-          <div class="info-row">
-            <span class="pill">Location</span>
-            <span>Shop No. 103, Swaraaj Heights, Kate Wasti Road, Punawale 411033</span>
-          </div>
-          <div class="info-row">
-            <span class="pill">Hours</span>
-            <span>Mon–Sat: 10:00 AM – 8:00 PM • Sun by appointment</span>
-          </div>
-          <div class="info-row">
-            <span class="pill">Contact</span>
-            <span>
-              <a href="tel:09226680164">09226680164</a> · <a href="tel:07709736251">07709736251</a>
-            </span>
-          </div>
-        </div>
-        <aside class="sidebar">
-          <div class="card">
-            <h2>Quick Actions</h2>
-            <p class="sub">Fast ways to get in touch for an appointment.</p>
-            <div class="cta" style="margin-top:8px">
-              <a class="btn" href="tel:+919226680164">Call Now</a>
-              <!-- <a class="btn ghost" href="sms:+919226680164?body=Hello%20Aesthetica%2C%20I%27d%20like%20to%20book%20an%20appointment.">Send SMS</a> -->
-            </div>
-            <p class="note">Prefer WhatsApp? Use the green button above to message with a prefilled template.</p>
-          </div>
-        </aside>
-      </div>
-    </section>
+      <section id="booking" aria-labelledby="booking-heading">
+        <h2 id="booking-heading">Book an Appointment</h2>
+        <p>Choose WhatsApp for instant chat. Tip: Add preferred date/time and service in the message for faster confirmation. Online booking is free. You’ll receive confirmation by WhatsApp/SMS.</p>
 
-    <section id="services">
-      <div class="container">
-        <h2>Services</h2>
-        <p class="sub">Explore our Dental and Skin Care offerings.</p>
+        <a class="cta" href="https://wa.me/919226680164?text=Hello%20Aesthetica%2C%20I%27d%20like%20to%20book%20an%20appointment%20for%20%5Bservice%5D%20on%20%5Bdate%5D%20at%20%5Btime%5D." aria-label="WhatsApp booking for Aesthetica">
+          Book on WhatsApp
+        </a>
+        <a class="cta secondary" href="tel:+919226680164" aria-label="Call Aesthetica primary number">Call: 09226680164</a>
+      </section>
 
-        <div class="grid">
-          <div class="services">
-            <div class="card">
-              <h3>Dental Care</h3>
-              <ul class="clean">
-                <li class="service"><b>Routine Checkup</b><span>Comprehensive oral examination and treatment plan.</span></li>
-                <li class="service"><b>Scaling & Polishing</b><span>Professional cleaning for gum health and stain removal.</span></li>
-                <li class="service"><b>Fillings</b><span>Tooth-colored restorations for cavities and minor fractures.</span></li>
-                <li class="service"><b>Root Canal Treatment</b><span>Pain-relieving endodontic therapy to save natural teeth.</span></li>
-                <li class="service"><b>Crowns & Bridges</b><span>Strong, aesthetic restorations for damaged or missing teeth.</span></li>
-                <li class="service"><b>Extractions</b><span>Safe removal with minimal discomfort, including wisdom teeth.</span></li>
-                <li class="service"><b>Dental Implants</b><span>Permanent replacement for missing teeth.</span></li>
-                <li class="service"><b>Orthodontics</b><span>Metal/ceramic braces and clear aligners for alignment.</span></li>
-                <li class="service"><b>Teeth Whitening</b><span>In-clinic and at-home whitening options.</span></li>
-                <li class="service"><b>Pediatric Dentistry</b><span>Gentle care tailored for children.</span></li>
-              </ul>
-            </div>
-          </div>
+      <section id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <p>
+          <strong>Phone:</strong>
+          <a href="tel:+919226680164">09226680164</a> /
+          <a href="tel:+917709736251">07709736251</a>
+        </p>
+        <address>
+          <strong>Address:</strong>
+          Shop No. 103, Swaraaj Heights,
+          Kate Wasti Road, Punawale, Pune — 411033
+        </address>
+        <p>
+          <strong>Hours:</strong> Mon–Sat: 10:00 AM – 8:00 PM • Sun by appointment
+        </p>
+      </section>
+    </main>
 
-          <div class="sidebar">
-            <div class="card">
-              <h3>Skin Care</h3>
-              <ul class="clean">
-                <li class="service"><b>Acne Care</b><span>Active acne control and scar management.</span></li>
-                <li class="service"><b>Chemical Peels</b><span>Targeted peels for glow, pigmentation, and texture.</span></li>
-                <li class="service"><b>Medifacials</b><span>Clinical facials for hydration, radiance, and clarity.</span></li>
-                <li class="service"><b>Pigmentation Treatment</b><span>Melasma, tanning, and uneven tone correction.</span></li>
-                <li class="service"><b>Anti-ageing</b><span>Botox, fillers, and skin-tightening protocols.</span></li>
-                <li class="service"><b>Microneedling / PRP</b><span>Collagen induction and hair/scalp therapies.</span></li>
-                <!-- <li class="service"><b>Laser Hair Reduction</b><span>Long-term hair reduction for face and body.</span></li> -->
-                <li class="service"><b>Scar Reduction</b><span>Microneedling, peels, and combination protocols.</span></li>
-                <li class="service"><b>Wart / Mole Removal</b><span>Safe, precise removal with aftercare guidance.</span></li>
-                <li class="service"><b>Skin Rejuvenation</b><span>Brightening, hydration, and glow boosters.</span></li>
-              </ul>
-            </div>
-            <p class="note">Note: Treatment plans are customized after consultation.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="book">
-      <div class="container grid">
-        <div class="services">
-          <div class="card">
-            <h2>Book an Appointment</h2>
-            <p class="sub">Choose WhatsApp for instant chat.</p>
-            <div class="cta">
-              <a class="btn" href="https://wa.me/919226680164?text=Hi%20Aesthetica%2C%20I%27d%20like%20to%20book%20an%20appointment%20for%20%7Bservice%7D%20on%20%7Bdate%2Ftime%7D." target="_blank" rel="noopener">WhatsApp Booking</a>
-              <!-- Replace the URL below with your Google Form link if you make one -->
-              <!-- <a class="btn ghost" href="https://forms.gle/your-form-id" target="_blank" rel="noopener">Appointment Form</a> -->
-            </div>
-            <p class="note" style="margin-top:10px">Tip: Add preferred date/time and service in the message for faster confirmation.</p>
-            <div class="divider"></div>
-            <p class="success">Online booking is free. You’ll receive confirmation by WhatsApp/SMS.</p>
-          </div>
-        </div>
-
-        <aside class="sidebar">
-          <div class="card">
-            <h3>Clinic Location</h3>
-            <p class="sub">Find us on Google Maps.</p>
-            <div class="map-wrap">
-              <!-- Update the src with your exact Google Maps embed once the Place is verified -->
-              <iframe
-                title="Aesthetica Dental & Skin Care Clinic Location"
-                src="https://www.google.com/maps?q=Aesthetica%20Dental%20and%20Skin%20Care%20Clinic&output=embed"
-                width="100%" height="260" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container grid">
-        <div class="services">
-          <div class="card">
-            <h2>Contact</h2>
-            <div class="info-row"><span class="pill">Phone</span> <a href="tel:+919226680164">09226680164</a>/<a href="tel:+917709736251">07709736251</a></div>
-            <div class="info-row"><span class="pill">Email</span> <a href="mailto:nikhil.prachi01@gmail.com">nikhil.prachi01@gmail.com</a></div>
-            <div class="info-row"><span class="pill">Address</span> Shop No. 103, Swaraaj Heights, Kate Wasti Road, Punawale Pune-411033</div>
-          </div>
-        </div>
-        <aside class="sidebar">
-          <div class="card">
-            <h3>Patient Resources</h3>
-            <ul class="clean">
-              <li class="service"><b>Consent & Aftercare</b><span>Get procedure-specific instructions during your visit.</span></li>
-              <li class="service"><b>Payments</b><span>UPI / Cards / Cash accepted at clinic.</span></li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      © <span id="year"></span> Aesthetica · All rights reserved · Made with ❤
-    </div>
-  </footer>
+    <footer role="contentinfo">
+      <p>&copy; <span id="year"></span> Aesthetica — Dental &amp; Skin Care Clinic, Punawale, Pune.</p>
+    </footer>
+  </div>
 
   <script>
+    // Keep footer year current
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
