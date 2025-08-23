@@ -4,28 +4,42 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Aesthetica — Dental & Skin Care Clinic in Punawale, Pune</title>
-  <meta name="description" content="Aesthetica offers comprehensive dental and skin care in Punawale, Pune. Led by Dr. Prachi Gupta (BDS, Certified Cosmetologist). Routine checkups, root canals, implants, braces, whitening, pediatric dentistry, scaling & polishing, fillings, crowns & bridges, extractions, and cosmetic skin treatments." />
+  <title>Aesthetica — Dental &amp; Skin Care Clinic in Punawale, Pune</title>
+  <meta name="description" content="Aesthetica offers comprehensive dental and skin care in Punawale, Pune. Led by Dr. Prachi Gupta (BDS, Certified Cosmetologist). Routine checkups, root canals, implants, braces, whitening, pediatric dentistry, scaling &amp; polishing, fillings, crowns &amp; bridges, extractions, and cosmetic skin treatments." />
 
-  <link rel="canonical" href="https://www.example.com/" />
-
+  <link rel="canonical" href="https://garg-nikhil.github.io/aesthetica/" />
   <meta name="robots" content="index,follow" />
   <meta name="format-detection" content="telephone=no" />
 
+  <!-- Favicon / App Icons (project-path aware for GitHub Pages) -->
+  <link rel="icon" type="image/png" href="/aesthetica/logo.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/aesthetica/logo.png" />
+
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Aesthetica — Dental & Skin Care Clinic in Punawale, Pune" />
+  <meta property="og:title" content="Aesthetica — Dental &amp; Skin Care Clinic in Punawale, Pune" />
   <meta property="og:description" content="Integrated dental and skin care. Patient-first, hygiene-focused, modern equipment. Mon–Sat 10 AM–8 PM, Sun by appointment." />
   <meta property="og:locale" content="en_IN" />
+  <meta property="og:url" content="https://garg-nikhil.github.io/aesthetica/" />
+  <meta property="og:image" content="https://garg-nikhil.github.io/aesthetica/logo.png" />
+  <meta property="og:image:alt" content="Aesthetica — Dental &amp; Skin Care Clinic logo" />
 
-  <!-- Basic, lightweight CSS for clean layout -->
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Aesthetica — Dental &amp; Skin Care Clinic in Punawale, Pune" />
+  <meta name="twitter:description" content="Integrated dental and skin care. Patient-first, hygiene-focused, modern equipment." />
+  <meta name="twitter:image" content="https://garg-nikhil.github.io/aesthetica/logo.png" />
+
+  <!-- Basic, lightweight CSS -->
   <style>
     :root {
       --text:#1a1a1a;
       --muted:#555;
       --subtle:#777;
       --border:#e6e6e6;
-      --brand:#0f6;
+      --blue:#0b5cab;
+      --green:#0a7d2f;
+      --bg:#fff;
     }
     * { box-sizing: border-box; }
     body {
@@ -33,7 +47,7 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       line-height: 1.6;
       color: var(--text);
-      background: #fff;
+      background: var(--bg);
     }
     .container {
       max-width: 880px;
@@ -43,6 +57,16 @@
     header.site-header {
       text-align: center;
       padding: 28px 12px 12px;
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 8px;
+      width: 112px;
+      height: 112px;
+      object-fit: contain;
+    }
+    @media (min-width: 640px) {
+      .logo { width: 128px; height: 128px; }
     }
     .brand {
       margin: 0;
@@ -68,7 +92,7 @@
     nav a {
       display: inline-block;
       padding: 6px 10px;
-      color: #0b5cab;
+      color: var(--blue);
       text-decoration: none;
     }
     nav a:hover { text-decoration: underline; }
@@ -82,6 +106,10 @@
     h3 {
       font-size: 1.15rem;
       margin: 16px 0 8px;
+    }
+    h4 {
+      font-size: 1.05rem;
+      margin: 0 0 6px;
     }
     p { margin: 8px 0; }
     .badges {
@@ -102,7 +130,7 @@
       background: #fff;
     }
     .cta {
-      background: #0b5cab;
+      background: var(--blue);
       color: #fff !important;
       border-radius: 8px;
       display: inline-block;
@@ -112,16 +140,19 @@
       font-weight: 600;
     }
     .cta.secondary {
-      background: #0a7d2f;
+      background: var(--green);
     }
-    .list-compact {
-      margin: 6px 0 0;
-      padding-left: 18px;
-    }
-    .list-compact li { margin: 4px 0; }
     address {
       font-style: normal;
       white-space: pre-line;
+    }
+    .map {
+      margin-top: 12px;
+      border: 0;
+      width: 100%;
+      height: 320px;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
     }
     footer {
       padding: 20px 0 40px;
@@ -135,7 +166,7 @@
     }
   </style>
 
-  <!-- LocalBusiness + MedicalBusiness structured data -->
+  <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -143,9 +174,9 @@
     "name": "Aesthetica",
     "alternateName": "Aesthetica Dental & Skin Care Clinic",
     "description": "Integrated dental and skin care clinic offering routine checkups, root canals, implants, braces, whitening, pediatric dentistry, scaling and polishing, fillings, crowns and bridges, extractions, and cosmetic skin treatments.",
-    "url": "https://www.example.com/",
-    "logo": "https://www.example.com/logo.png",
-    "image": "https://www.example.com/cover.jpg",
+    "url": "https://garg-nikhil.github.io/aesthetica/",
+    "logo": "https://garg-nikhil.github.io/aesthetica/logo.png",
+    "image": "https://garg-nikhil.github.io/aesthetica/logo.png",
     "telephone": ["+919226680164", "+917709736251"],
     "address": {
       "@type": "PostalAddress",
@@ -166,7 +197,7 @@
       "honorificSuffix": "BDS",
       "jobTitle": "Certified Cosmetologist"
     },
-    "medicalSpecialty": ["Dentistry","CosmeticSurgery","Dermatology"],
+    "medicalSpecialty": ["Dentistry","Dermatology","CosmeticSurgery"],
     "sameAs": []
   }
   </script>
@@ -174,6 +205,7 @@
 <body>
   <div class="container">
     <header class="site-header" role="banner">
+      <img class="logo" src="/aesthetica/logo.png" alt="Aesthetica logo" width="112" height="112" decoding="async" fetchpriority="high" />
       <h1 class="brand">Aesthetica</h1>
       <h2 class="tagline">Dental &amp; Skin Care Clinic</h2>
       <p class="subline">Punawale, Pune • Mon–Sat 10:00 AM – 8:00 PM • Sun by appointment</p>
@@ -183,6 +215,7 @@
         <a href="#services">Services</a>
         <a href="#booking">Book</a>
         <a href="#contact">Contact</a>
+        <a href="#location">Location</a>
       </nav>
     </header>
 
@@ -240,6 +273,34 @@
             <p>Gentle care tailored for children.</p>
           </article>
         </div>
+
+        <h3 style="margin-top:18px;">Skin Care</h3>
+        <div class="services-grid">
+          <article class="card">
+            <h4>Acne &amp; Scar Management</h4>
+            <p>Clinical treatments and maintenance plans to reduce acne and scars.</p>
+          </article>
+          <article class="card">
+            <h4>Chemical Peels</h4>
+            <p>Superficial to medium-depth peels for brightness and texture.</p>
+          </article>
+          <article class="card">
+            <h4>Laser Hair Reduction</h4>
+            <p>Sessions for long-term hair reduction with qualified supervision.</p>
+          </article>
+          <article class="card">
+            <h4>Pigmentation Treatments</h4>
+            <p>Targeted protocols for melasma, tanning, and uneven tone.</p>
+          </article>
+          <article class="card">
+            <h4>Anti-Aging Therapy</h4>
+            <p>Customized regimens including tightening and rejuvenation.</p>
+          </article>
+          <article class="card">
+            <h4>Medical Facials</h4>
+            <p>Skin-type–specific facials for hydration, glow, and clarity.</p>
+          </article>
+        </div>
       </section>
 
       <section id="booking" aria-labelledby="booking-heading">
@@ -267,6 +328,19 @@
         <p>
           <strong>Hours:</strong> Mon–Sat: 10:00 AM – 8:00 PM • Sun by appointment
         </p>
+      </section>
+
+      <section id="location" aria-labelledby="location-heading">
+        <h2 id="location-heading">Location</h2>
+        <p>Find Aesthetica at Shop No. 103, Swaraaj Heights, Kate Wasti Road, Punawale, Pune 411033.</p>
+        <!-- Google Maps Embed: replace the src with your exact Place embed if you have the Google Maps share link -->
+        <iframe
+          class="map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Aesthetica%20Dental%20and%20Skin%20Care%20Clinic&output=embed">
+        </iframe>
       </section>
     </main>
 
